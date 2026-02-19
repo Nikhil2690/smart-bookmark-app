@@ -1,3 +1,4 @@
+import { redirect } from 'next/navigation'
 import { createSupabaseServerClient } from '@/lib/supabaseServer'
 import BookmarkForm from '@/components/BookmarkForm'
 import BookmarkList from '@/components/BookmarkList'
@@ -11,7 +12,7 @@ export default async function Dashboard() {
   } = await supabase.auth.getUser()
 
   if (!user) {
-    return <div>Please login</div>
+    redirect('/login')
   }
 
   const { data: bookmarks = [] } = await supabase
