@@ -80,7 +80,7 @@ export default function BookmarkList({
 
         <button
           onClick={() => handleDelete(bookmark.id)}
-          className="opacity-0 group-hover:opacity-100 text-sm px-3 py-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition"
+          className=" group-hover:opacity-100 text-sm px-3 py-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition"
         >
           Delete
         </button>
