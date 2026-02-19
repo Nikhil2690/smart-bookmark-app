@@ -1,10 +1,10 @@
-import { createServerSupabase } from '@/lib/supabaseServer'
+import { createSupabaseServerClient } from '@/lib/supabaseServer'
 import BookmarkForm from '@/components/BookmarkForm'
 import BookmarkList from '@/components/BookmarkList'
 import LogoutButton from '@/components/LogoutButton'
 
 export default async function Dashboard() {
-  const supabase = await createServerSupabase()
+  const supabase = await createSupabaseServerClient()
 
   const {
     data: { user },

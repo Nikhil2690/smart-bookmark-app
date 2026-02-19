@@ -1,8 +1,8 @@
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
-export function createSupabaseServerClient() {
-  const cookieStore = cookies()
+export async function createSupabaseServerClient() {
+  const cookieStore = await cookies()
 
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -13,8 +13,7 @@ export function createSupabaseServerClient() {
           return cookieStore.getAll()
         },
         setAll() {
-          // ⚠️ DO NOTHING HERE
-          // Next.js 16 does not allow cookie modification in Server Components
+          // do nothing in server component
         },
       },
     }
